@@ -21,7 +21,7 @@ function seleccionarTabla(callback) {
         console.log(err);
         callback(err,null);
         return;
-      } 
+      }
 
       // devuelve la informacion
       const datos = rows.map(x => Object.assign({},x));
@@ -101,7 +101,7 @@ function actualizarRegistro(dato, callback) {
       municipio_id = UUID_TO_BIN(?)
     where id = UUID_TO_BIN(?)`;
 
-    conexion.query(sql,[dato.cedula,dato.direccion,dato.email,dato.nombre,dato.telefono,dato.municipio_id,dato.id],(err, result) => { 
+    conexion.query(sql,[dato.cedula,dato.direccion,dato.email,dato.nombre,dato.telefono,dato.municipio_id,dato.id],(err, result) => {
 
       if (err) {
         // envia el objeto de error
@@ -128,7 +128,7 @@ function eliminarRegistro(id, callback) {
   sql = 'delete from clientes where id = UUID_TO_BIN(?)';
 
     conexion.query(sql,[id],(err, result) => { 
-      
+
       if (err) {
         // envia el objeto de error
         console.log(err);
@@ -140,7 +140,7 @@ function eliminarRegistro(id, callback) {
         // Error: no se encontro informacion
         callback({code: 'NOT_FOUND', message: 'No se encontraron registros.'}, null);
         return;
-      }   
+      }
 
       callback({id: id, status: 'Registro eliminado.'});
 

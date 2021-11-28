@@ -1,6 +1,19 @@
 {
   "dependencies": {
     "mysql": "^2.18.1",
-    "prompt-sync": "^4.1.6"
-  }
+    "prompt-sync": "^4.1.6",
+    "sync-mysql": "^3.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "name": "api_generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

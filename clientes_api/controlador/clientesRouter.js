@@ -7,7 +7,7 @@ const STATUS_OK = 200;
 const STATUS_NOT_FOUND = 404;
 const STATUS_INTERNAL_ERROR = 500;
 
-// GET: Seleccionar Datos 
+// GET: Seleccionar Datos
 router.get('/', (req, res) => {
   clientesDAO.seleccionarTabla((err,datos) => {
     
@@ -123,7 +123,7 @@ router.put('/:id', (req, res) => {
     // verifica que llegue el cuerpo de la petición
     res.status(STATUS_NOT_FOUND);
     res.json({message: 'Se debe enviar el parametro id'});
-    return;    
+    return;
   }
 
   if (!req.body) {
@@ -132,7 +132,7 @@ router.put('/:id', (req, res) => {
     res.json({message: 'El cuerpo de la petición no puede estar vacía!'});
     return;    
   }
-  
+
   const {cedula, direccion, email, nombre, telefono, municipio_id} = req.body;
   const { id } = req.params;
 
@@ -165,7 +165,7 @@ router.put('/:id', (req, res) => {
 
     res.status(STATUS_OK).json(resultado);  
 
-  }); 
+  });
 
 });
 
